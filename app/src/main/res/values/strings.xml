@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Irish Skate Buddy</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="label_maps">MAPS</string>
+    <string name="label_friends">FRIENDS</string>
+    <string name="label_tricklist">TRICK LIST</string>
+    <string name="label_gallery">GALLERY</string>
+    <string name="label_createspot">CREATE SPOT</string>
+    <string name="label_camera">CAMERA</string>
+    <string name="title_activity_skate_park__map_">Map</string>
+</resources>

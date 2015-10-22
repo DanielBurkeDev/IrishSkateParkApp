@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/marker_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000">
+
+
+    <ImageView
+        android:id="@+id/marker_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon1" />
+
+    <TextView
+        android:id="@+id/marker_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/marker_icon"
+        android:layout_toRightOf="@+id/marker_icon"
+        android:text="placeholder"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/another_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/marker_icon"
+        android:layout_marginLeft="5dp"
+        android:text="placeholder"
+        android:textStyle="bold" />
+
+</RelativeLayout>
