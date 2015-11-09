@@ -19,28 +19,28 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_map"
+            android:id="@+id/btn_skateparks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/label_maps"
+            android:text="@string/label_skateparks"
 
             />
 
         <Button
-            android:id="@+id/btn_friends"
+            android:id="@+id/btn_skateshops"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/label_friends"
+            android:text="@string/label_skateshops"
             />
 
         <Button
-            android:id="@+id/btn_tricklist"
+            android:id="@+id/btn_skatespots"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/label_tricklist"
+            android:text="@string/label_skatespots"
             />
 
         <Button

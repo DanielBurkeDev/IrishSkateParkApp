@@ -26,7 +26,9 @@ import retrofit.client.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button btn_maps;
+    private Button btn_skateparks;
+    private Button btn_skateshops;
+    private Button btn_skatespots;
     private Toolbar toolbar;
 //    private String baseUrl = "http://skatdev.com/tst/isa";
 //    private String parkname = "";
@@ -45,9 +47,12 @@ public class MainActivity extends AppCompatActivity {
 //        toolbar.setLogo(R.drawable.inspect_logo_080615);
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
         //
-        btn_maps = (Button) findViewById(R.id.btn_map);
-        btn_maps.setOnClickListener(new ButtonListener());
-
+        btn_skateparks = (Button) findViewById(R.id.btn_skateparks);
+        btn_skateparks.setOnClickListener(new ButtonListener());
+        btn_skateshops = (Button) findViewById(R.id.btn_skateshops);
+        btn_skateshops.setOnClickListener(new ButtonListener());
+        btn_skatespots = (Button) findViewById(R.id.btn_skatespots);
+        btn_skatespots.setOnClickListener(new ButtonListener());
     }
 
 
@@ -112,14 +117,32 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.btn_map:
-                    Toast.makeText(getApplicationContext(), "open maps",
+                case R.id.btn_skateparks:
+                    Toast.makeText(getApplicationContext(), "open skateparks",
                             Toast.LENGTH_SHORT).show();
 //                    getJSON();
                     // Launch main activity
                     Intent intent = new Intent(MainActivity.this,
                             SkatePark_Map_Activity.class);
                     startActivity(intent);
+                    break;
+                case R.id.btn_skateshops:
+                    Toast.makeText(getApplicationContext(), "open skateshops",
+                            Toast.LENGTH_SHORT).show();
+//                    getJSON();
+                    // Launch main activity
+                    Intent intent2 = new Intent(MainActivity.this,
+                            MainMapActivity.class);
+                    startActivity(intent2);
+                    break;
+                case R.id.btn_skatespots:
+                    Toast.makeText(getApplicationContext(), "open skatespots",
+                            Toast.LENGTH_SHORT).show();
+//                    getJSON();
+                    // Launch main activity
+                    Intent intent3 = new Intent(MainActivity.this,
+                            MainMapActivity.class);
+                    startActivity(intent3);
                     break;
 
                 default:

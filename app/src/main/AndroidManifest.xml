@@ -39,8 +39,6 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,10 +48,14 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
 
-
         <activity
             android:name=".activities.SkatePark_Map_Activity"
             android:label="@string/title_activity_skate_park__map_" >
+        </activity>
+        <activity
+            android:name=".activities.MainMapActivity"
+            android:label="@string/title_activity_main_map"
+            android:theme="@style/AppTheme" >
         </activity>
     </application>
 
