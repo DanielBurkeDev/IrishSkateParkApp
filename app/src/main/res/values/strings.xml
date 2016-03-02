@@ -33,4 +33,5 @@
         <item>@string/label_camera</item>
 
     </string-array>
+    <string name="title_activity_tricklist">Trick List</string>
 </resources>

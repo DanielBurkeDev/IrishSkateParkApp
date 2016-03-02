@@ -8,6 +8,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -27,20 +28,22 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
     private GoogleMap mMap;
 
-    private String baseUrl = "http://skatdev.com/tst/isa";
+    private String baseUrl = "http://therestoredself.com/isa";
     private String parkname = "";
     private ArrayList<Skateparks_Model> skateparks = new ArrayList<Skateparks_Model>();
+
 
     private double lats;
     private double longs;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //call rest api
-        getJSON();
+
         setContentView(R.layout.activity_skate_park__map);
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -61,25 +64,38 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+
         mMap = googleMap;
+        Log.d("onMapReady ", " arrived at onMapReady");
+        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sp1 = new LatLng(lats, longs);
-        mMap.addMarker(new MarkerOptions()
-                .position(sp1)
-                .title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sp1));
+        //call rest api
+        getJSON();
 
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(
-                new LatLng(53.543170, -7.502321)).zoom(6).build();
+        //        // Add a marker in Sydney and move the camera
+//        LatLng sp1 = new LatLng(lats, longs);
+//        mMap.addMarker(new MarkerOptions()
+//                .position(sp1)
+//                .title("Marker in Sydney"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sp1));
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//        //gets lat longs from model via loop
+//        ArrayList<Skateparks_Model> latlongs = new ArrayList<Skateparks_Model>();
+//        for(int i = 0 ; i < latlongs.size() ; i++ ) {
+//
+//            createMarkers(latlongs.get(i).getmIsa_latitude(), latlongs.get(i).getmIsa_longitude());
+//            Log.d("marker latlongs ", " " + latlongs.toString());
+//        }
+
+
 
     }
 
     private void getJSON() {
 
-        // Create a very simple REST adapter which points the GitHub API endpoint.
+        // Create a very simple REST adapter which points the API endpoint.
         SkateParks_Inter skateParks_inter = ServiceGenerator.createService(SkateParks_Inter.class, baseUrl);
 
         skateParks_inter.getSkateParks(new Callback<List<Skateparks_Model>>() {
@@ -92,13 +108,15 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
                     lats = sm.getmIsa_latitude();
                     longs = sm.getmIsa_longitude();
 
-
+                    createMarkers(lats, longs);
+                    Log.d("marker latlongs ", " " + lats + " " + longs);
 
                     Log.d("lat and longs ", " " + lats + " " + longs);
                     // createMarkers(lats, longs);
 //                    Object parkNames = sm.getmIsa_name();
 //                    Log.d("parknames ", " " + parkNames);
                 }
+
 
             }
 
@@ -112,6 +130,19 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
         //////////////////////////////
 
 
+    }
+
+    private void createMarkers(double latitude, double longitude){
+
+         mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(latitude, longitude))
+                .anchor(0.5f, 0.5f));
+
+
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(
+                new LatLng(53.543170, -7.502321)).zoom(8).build();
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
 
