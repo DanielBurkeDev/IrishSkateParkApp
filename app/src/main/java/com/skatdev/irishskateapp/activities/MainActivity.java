@@ -130,9 +130,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "open skateshops",
                             Toast.LENGTH_SHORT).show();
 //                    getJSON();
-                    // Launch main activity
+                   //  Launch main activity
                     Intent intent2 = new Intent(MainActivity.this,
-                            MainMapActivity.class);
+                           SkatePark_List_Activity.class);
                     startActivity(intent2);
                     break;
                 case R.id.btn_skatespots:

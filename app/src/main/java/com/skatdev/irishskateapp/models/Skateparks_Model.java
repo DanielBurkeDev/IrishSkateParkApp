@@ -30,10 +30,29 @@ public class Skateparks_Model {
     private String mIsa_comment;
     @SerializedName("isa_website")
     private String mIsa_website;
+    private int id, ratings;
+    private String name, descr, addr, phone, email, img, comment, website;
+    private double lats, longs;
 
-    public Skateparks_Model(){
+    public Skateparks_Model() {
 
     }
+
+    public Skateparks_Model(int id, String name, String descr, String addr, String phone, String email,double lats, double longs, int ratings, String img, String comment, String website ) {
+        this.id = id;
+        this.ratings = ratings;
+        this.name = name;
+        this.descr = descr;
+        this.addr = addr;
+        this.phone = phone;
+        this.email = email;
+        this.img = img;
+        this.comment = comment;
+        this.website = website;
+        this.lats = lats;
+        this.longs = longs;
+    }
+
 
     public int getmIsa_skateparksid() {
         return mIsa_skateparksid;

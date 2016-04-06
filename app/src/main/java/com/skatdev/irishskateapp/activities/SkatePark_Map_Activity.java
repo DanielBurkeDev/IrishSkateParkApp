@@ -30,13 +30,11 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
     private String baseUrl = "http://therestoredself.com/isa";
     private String parkname = "";
-    private ArrayList<Skateparks_Model> skateparks = new ArrayList<Skateparks_Model>();
 
-
-    private double lats;
-    private double longs;
-
-
+    private List skateparks_models;
+    private int id, ratings;
+    private String name, descr, addr, phone, email, img, comment, website;
+    private double lats, longs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +88,6 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 //        }
 
 
-
     }
 
     private void getJSON() {
@@ -102,19 +99,36 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
             @Override
             public void success(List<Skateparks_Model> skateparks_models, Response response) {
 
-                Log.d("parkName", " " + skateparks_models.toString());
+                Log.d("skatd", "parkName: " + skateparks_models.toString());
+
+                ArrayList<Skateparks_Model> skateparks = new ArrayList<Skateparks_Model>();
+
                 //loop through to get lat + long
                 for (Skateparks_Model sm : skateparks_models) {
+                    id = sm.getmIsa_skateparksid();
+                    name = sm.getmIsa_name();
+                    descr = sm.getmIsa_description();
+                    addr = sm.getmIsa_description();
+                    phone = sm.getmIsa_phone();
+                    email = sm.getmIsa_email();
                     lats = sm.getmIsa_latitude();
                     longs = sm.getmIsa_longitude();
+                    ratings = sm.getmIsa_rating();
+                    img = sm.getmIsa_image();
+                    comment = sm.getmIsa_comment();
+                    website = sm.getmIsa_website();
 
-                    createMarkers(lats, longs);
-                    Log.d("marker latlongs ", " " + lats + " " + longs);
+                    // createMarkers(lats, longs);
+                    Log.d("skatd", "marker latlongs: " + lats + " " + longs);
 
-                    Log.d("lat and longs ", " " + lats + " " + longs);
+
                     // createMarkers(lats, longs);
 //                    Object parkNames = sm.getmIsa_name();
 //                    Log.d("parknames ", " " + parkNames);
+
+                    //   skateparks.add(new Skateparks_Model(id, name, descr, addr, phone, email, lats, longs, ratings, img, comment, website));
+                    //   Log.d("skatd", "skateparks arraylist:  " + skateparks.toString());
+                    createMarkersList(id, name, descr, addr, phone, email, lats, longs, ratings, img, comment, website);
                 }
 
 
@@ -123,7 +137,7 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
             @Override
             public void failure(RetrofitError error) {
 
-                Log.e("parkName", " " + error.toString());
+                Log.e("skatd", "parkNameErr: " + error.toString());
             }
 
         });
@@ -132,18 +146,35 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
     }
 
-    private void createMarkers(double latitude, double longitude){
+//    private void createMarkers(double latitude, double longitude){
+//
+//         mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(latitude, longitude))
+//                .anchor(0.5f, 0.5f));
+//
+//
+//        CameraPosition cameraPosition = new CameraPosition.Builder().target(
+//                new LatLng(53.287452, -6.153869)).zoom(8).build();
+//
+//        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//    }
 
-         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(latitude, longitude))
+    private void createMarkersList(int id, String name, String descr, String addr, String phone, String email, double lats, double longs, int ratings, String img, String comment, String website) {
+
+        Log.d("skatd", "createmarker lat longs: " + lats + " " + longs);
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(lats, longs))
+                .title(name)
+                .snippet(descr)
                 .anchor(0.5f, 0.5f));
 
 
+
         CameraPosition cameraPosition = new CameraPosition.Builder().target(
-                new LatLng(53.543170, -7.502321)).zoom(8).build();
+                new LatLng(53.287452, -6.153869)).zoom(8).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
     }
-
-
 }
