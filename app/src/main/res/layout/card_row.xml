@@ -1,0 +1,59 @@
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="5dp">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/spot1"
+            />
+
+        <TextView
+            android:id="@+id/list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/list_image"
+            android:text="Parkname"
+            android:textSize="30sp"
+            android:layout_marginLeft="16dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/list_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_title"
+            android:layout_toRightOf="@+id/list_image"
+            android:text="Description of park"
+            android:textSize="14sp"
+            android:layout_marginLeft="16dp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/list_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_desc"
+            android:layout_toRightOf="@+id/list_image"
+            android:text="Location"
+            android:textSize="14sp"
+            android:layout_marginLeft="16dp"
+            android:textColor="#000000"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

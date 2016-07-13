@@ -66,11 +66,11 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
         mMap = googleMap;
         Log.d("onMapReady ", " arrived at onMapReady");
-        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         //call rest api
-        getJSON();
+      // getJSON();
 
         //        // Add a marker in Sydney and move the camera
 //        LatLng sp1 = new LatLng(lats, longs);
@@ -101,7 +101,7 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
                 Log.d("skatd", "parkName: " + skateparks_models.toString());
 
-                ArrayList<Skateparks_Model> skateparks = new ArrayList<Skateparks_Model>();
+                ArrayList<Skateparks_Model> skateparks = new ArrayList<>();
 
                 //loop through to get lat + long
                 for (Skateparks_Model sm : skateparks_models) {
@@ -114,7 +114,7 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
                     lats = sm.getmIsa_latitude();
                     longs = sm.getmIsa_longitude();
                     ratings = sm.getmIsa_rating();
-                    img = sm.getmIsa_image();
+                  //  img = sm.getmIsa_image();
                     comment = sm.getmIsa_comment();
                     website = sm.getmIsa_website();
 

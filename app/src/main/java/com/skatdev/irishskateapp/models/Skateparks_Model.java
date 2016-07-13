@@ -2,9 +2,6 @@ package com.skatdev.irishskateapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by skatgroovey on 31/08/2015.
- */
 public class Skateparks_Model {
     @SerializedName("isa_skateparksid")
     private int mIsa_skateparksid;
@@ -25,34 +22,37 @@ public class Skateparks_Model {
     @SerializedName("isa_ratings")
     private int mIsa_rating;
     @SerializedName("isa_image")
-    private String mIsa_image;
+    private int mIsa_image;
     @SerializedName("isa_comment")
     private String mIsa_comment;
     @SerializedName("isa_website")
     private String mIsa_website;
-    private int id, ratings;
-    private String name, descr, addr, phone, email, img, comment, website;
-    private double lats, longs;
+    @SerializedName("isa_locations_id")
+    private int mIsa_locations_id;
+//    private int id, ratings;
+//    private String name, descr, addr, phone, email, img, comment, website;
+//    private double lats, longs;
+
 
     public Skateparks_Model() {
-
     }
 
-    public Skateparks_Model(int id, String name, String descr, String addr, String phone, String email,double lats, double longs, int ratings, String img, String comment, String website ) {
-        this.id = id;
-        this.ratings = ratings;
-        this.name = name;
-        this.descr = descr;
-        this.addr = addr;
-        this.phone = phone;
-        this.email = email;
-        this.img = img;
-        this.comment = comment;
-        this.website = website;
-        this.lats = lats;
-        this.longs = longs;
+    public Skateparks_Model(int mIsa_skateparksid, String mIsa_name, String mIsa_description, String mIsa_address, String mIsa_phone, String mIsa_email,
+                            double mIsa_latitude, double mIsa_longitude, int mIsa_rating, int mIsa_image, String mIsa_comment, String mIsa_website, int mIsa_locations_id) {
+        this.mIsa_skateparksid = mIsa_skateparksid;
+        this.mIsa_name = mIsa_name;
+        this.mIsa_description = mIsa_description;
+        this.mIsa_address = mIsa_address;
+        this.mIsa_phone = mIsa_phone;
+        this.mIsa_email = mIsa_email;
+        this.mIsa_latitude = mIsa_latitude;
+        this.mIsa_longitude = mIsa_longitude;
+        this.mIsa_rating = mIsa_rating;
+        this.mIsa_image = mIsa_image;
+        this.mIsa_comment = mIsa_comment;
+        this.mIsa_website = mIsa_website;
+        this.mIsa_locations_id = mIsa_locations_id;
     }
-
 
     public int getmIsa_skateparksid() {
         return mIsa_skateparksid;
@@ -92,7 +92,7 @@ public class Skateparks_Model {
         return mIsa_rating;
     }
 
-    public String getmIsa_image() {
+    public int getmIsa_image() {
         return mIsa_image;
     }
 
@@ -102,6 +102,10 @@ public class Skateparks_Model {
 
     public String getmIsa_website() {
         return mIsa_website;
+    }
+
+    public int getmIsa_locations_id() {
+        return mIsa_locations_id;
     }
 
     @Override
@@ -119,6 +123,7 @@ public class Skateparks_Model {
                 ", mIsa_image='" + mIsa_image + '\'' +
                 ", mIsa_comment='" + mIsa_comment + '\'' +
                 ", mIsa_website='" + mIsa_website + '\'' +
+                ", mIsa_locations_id='" + mIsa_locations_id + '\'' +
                 '}';
     }
 }
