@@ -140,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 //                    getJSON();
                     // Launch main activity
-                    Intent intent3 = new Intent(MainActivity.this,
-                            MainMapActivity.class);
-                    startActivity(intent3);
+//                    Intent intent3 = new Intent(MainActivity.this,
+//                            MainMapActivity.class);
+//                    startActivity(intent3);
                     break;
 
                 default:

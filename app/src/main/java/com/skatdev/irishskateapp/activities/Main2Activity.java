@@ -1,10 +1,14 @@
 package com.skatdev.irishskateapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.skatdev.irishskateapp.R;
 import com.skatdev.irishskateapp.adapters.DataAdapter;
@@ -23,9 +27,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Main2Activity extends AppCompatActivity {
 
+
+
     private RecyclerView recyclerView;
     private ArrayList<Skateparks_Model> data;
     private DataAdapter adapter;
+
+    private Button btn_moreinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,9 @@ public class Main2Activity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
+
+        btn_moreinfo = (Button) findViewById(R.id.more_info);
+//        btn_moreinfo.setOnClickListener(new ButtonListener());
 
         loadJSON();
 
@@ -58,8 +69,9 @@ public class Main2Activity extends AppCompatActivity {
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getParks()));
 
                 Log.d("Test data ", data.toString());
-                adapter = new DataAdapter(data);
+                adapter = new DataAdapter(data, this);
                 recyclerView.setAdapter(adapter);
+
 
             }
 
@@ -69,4 +81,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

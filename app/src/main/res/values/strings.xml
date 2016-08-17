@@ -36,4 +36,6 @@
     <string name="title_activity_tricklist">Trick List</string>
     <string name="title_activity_map_container">MapContainerActivity</string>
     <string name="title_activity_skate_park__list_">SkatePark_List_Activity</string>
+    <string name="title_activity_skate_park__detail_">SkatePark_Detail_Activity</string>
+    <string name="title_activity_skate_park__detail__map_">Map</string>
 </resources>

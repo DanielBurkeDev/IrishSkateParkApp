@@ -52,18 +52,29 @@
             android:name=".activities.SkatePark_Map_Activity"
             android:label="@string/title_activity_skate_park__map_" />
         <activity
-            android:name=".activities.MainMapActivity"
-            android:label="@string/title_activity_main_map"
-            android:theme="@style/AppTheme" />
-
-        <activity
             android:name=".activities.Main2Activity"
             android:label="@string/title_activity_skate_park__list_"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activities.SkatePark_List_Activity"
             android:label="@string/title_activity_skate_park__list_"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.SkatePark_Detail_Activity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activities.SkatePark_Detail_Map_Activity"
+            android:label="@string/title_activity_skate_park__detail__map_"></activity>
     </application>
 
 </manifest>
