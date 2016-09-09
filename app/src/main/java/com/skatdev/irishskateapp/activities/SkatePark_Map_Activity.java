@@ -28,7 +28,7 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
     private GoogleMap mMap;
 
-    private String baseUrl = "http://therestoredself.com/isa";
+    private String baseUrl = "http://danielburkedev.com/isa";
     private String parkname = "";
 
     private List skateparks_models;

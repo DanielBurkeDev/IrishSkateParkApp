@@ -15,7 +15,7 @@ import retrofit.client.OkClient;
  * Created by skatgroovey on 17/09/2015.
  */
 public class RetroRestAdapter {
-private String baseUrl = "http://therestoredself.com/isa";
+private String baseUrl = "http://danielburkedev.com/isa";
 
 
 

@@ -21,10 +21,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/isaTheme">
         <activity
-            android:name=".activities.MainActivity"
-            android:label="@string/app_name">
+            android:name=".activities.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,11 +54,11 @@
         <activity
             android:name=".activities.Main2Activity"
             android:label="@string/title_activity_skate_park__list_"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/isaTheme" />
         <activity
             android:name=".activities.SkatePark_List_Activity"
             android:label="@string/title_activity_skate_park__list_"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/isaTheme" />
         <activity android:name=".activities.SkatePark_Detail_Activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -73,8 +73,9 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activities.SkatePark_Detail_Map_Activity"
-            android:label="@string/title_activity_skate_park__detail__map_"></activity>
+            android:name=".activities.Main3Activity"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/isaTheme"></activity>
     </application>
 
 </manifest>

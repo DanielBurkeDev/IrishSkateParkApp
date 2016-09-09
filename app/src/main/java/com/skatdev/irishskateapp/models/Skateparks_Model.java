@@ -22,13 +22,15 @@ public class Skateparks_Model {
     @SerializedName("isa_ratings")
     private int mIsa_rating;
     @SerializedName("isa_image")
-    private int mIsa_image;
+    private String mIsa_image;
     @SerializedName("isa_comment")
     private String mIsa_comment;
     @SerializedName("isa_website")
     private String mIsa_website;
     @SerializedName("isa_locations_id")
     private int mIsa_locations_id;
+    @SerializedName("isa_location")
+    private String mIsa_location;
 //    private int id, ratings;
 //    private String name, descr, addr, phone, email, img, comment, website;
 //    private double lats, longs;
@@ -38,7 +40,7 @@ public class Skateparks_Model {
     }
 
     public Skateparks_Model(int mIsa_skateparksid, String mIsa_name, String mIsa_description, String mIsa_address, String mIsa_phone, String mIsa_email,
-                            double mIsa_latitude, double mIsa_longitude, int mIsa_rating, int mIsa_image, String mIsa_comment, String mIsa_website, int mIsa_locations_id) {
+                            double mIsa_latitude, double mIsa_longitude, int mIsa_rating, String mIsa_image, String mIsa_comment, String mIsa_website, int mIsa_locations_id, String mIsa_location) {
         this.mIsa_skateparksid = mIsa_skateparksid;
         this.mIsa_name = mIsa_name;
         this.mIsa_description = mIsa_description;
@@ -52,6 +54,7 @@ public class Skateparks_Model {
         this.mIsa_comment = mIsa_comment;
         this.mIsa_website = mIsa_website;
         this.mIsa_locations_id = mIsa_locations_id;
+        this.mIsa_location = mIsa_location;
     }
 
     public int getmIsa_skateparksid() {
@@ -92,7 +95,7 @@ public class Skateparks_Model {
         return mIsa_rating;
     }
 
-    public int getmIsa_image() {
+    public String getmIsa_image() {
         return mIsa_image;
     }
 
@@ -108,6 +111,14 @@ public class Skateparks_Model {
         return mIsa_locations_id;
     }
 
+    public String getmIsa_location() {
+        return mIsa_location;
+    }
+
+    public void setmIsa_location(String mIsa_location) {
+        this.mIsa_location = mIsa_location;
+    }
+
     @Override
     public String toString() {
         return "Skateparks_Model{" +
@@ -120,10 +131,11 @@ public class Skateparks_Model {
                 ", mIsa_latitude=" + mIsa_latitude +
                 ", mIsa_longitude=" + mIsa_longitude +
                 ", mIsa_rating=" + mIsa_rating +
-                ", mIsa_image='" + mIsa_image + '\'' +
+                ", mIsa_image=" + mIsa_image +
                 ", mIsa_comment='" + mIsa_comment + '\'' +
                 ", mIsa_website='" + mIsa_website + '\'' +
-                ", mIsa_locations_id='" + mIsa_locations_id + '\'' +
+                ", mIsa_locations_id=" + mIsa_locations_id +
+                ", mIsa_location='" + mIsa_location + '\'' +
                 '}';
     }
 }

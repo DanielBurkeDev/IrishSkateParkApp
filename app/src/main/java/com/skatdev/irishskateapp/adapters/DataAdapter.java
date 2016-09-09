@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.skatdev.irishskateapp.R;
 import com.skatdev.irishskateapp.activities.SkatePark_Detail_Activity;
+import com.skatdev.irishskateapp.models.DBParks_Model;
 import com.skatdev.irishskateapp.models.JSONParksResponse;
 import com.skatdev.irishskateapp.models.Skateparks_Model;
 
@@ -28,6 +29,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<Skateparks_Model> parks;
     private Context context;
     private Callback callback;
+    private DBParks_Model dbParks_model;
 
     public DataAdapter(ArrayList<Skateparks_Model> parks, Context context) {
 
@@ -51,9 +53,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         //viewHolder.iv_image.setImageBitmap(parks.get(i).getmIsa_image());
         viewHolder.tv_name.setText(parks.get(i).getmIsa_name());
         viewHolder.tv_descr.setText(parks.get(i).getmIsa_description());
-        //viewHolder.tv_location.setText(parks.get(i).getmIsa_locations_id());
+        viewHolder.tv_location.setText(parks.get(i).getmIsa_location());
 
 
+    }
+
+    public void setFilter(ArrayList<Skateparks_Model> filteredparks) {
+        parks = new ArrayList<>();
+        Log.d("skatd", "test setfilter array" + parks.toString());
+        parks.addAll(filteredparks);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -73,7 +82,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             super(view);
             this.parks = parks;
             this.context = context;
-
+            Log.d("parks RVAdapter", "" + parks.toString());
             view.setOnClickListener(this);
 
             iv_image = (ImageView)view.findViewById(R.id.list_image);
@@ -99,6 +108,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             intent.putExtra("park_detail_name", skateparks.getmIsa_name());
             intent.putExtra("park_detail_address", skateparks.getmIsa_address());
             intent.putExtra("park_detail_phone", skateparks.getmIsa_phone());
+            intent.putExtra("park_detail_location", skateparks.getmIsa_location());
+
 
 
             Log.d("skatd", "parkname: " + skateparks.getmIsa_name() );

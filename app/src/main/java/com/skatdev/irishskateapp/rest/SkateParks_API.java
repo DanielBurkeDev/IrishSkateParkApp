@@ -9,7 +9,7 @@ import retrofit.http.GET;
  * Created by skatgroovey on 15/09/2015.
  */
 public interface SkateParks_API {
-    String BASE_URL = "http://therestoredself.com/isa";
+    String BASE_URL = "http://danielburkedev.com/isa";
 
     @GET("/isa_skateparksdb.php")
     void getSkateParks( Callback<Skateparks_Model> cb);

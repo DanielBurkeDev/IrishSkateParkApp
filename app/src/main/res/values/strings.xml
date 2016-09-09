@@ -38,4 +38,5 @@
     <string name="title_activity_skate_park__list_">SkatePark_List_Activity</string>
     <string name="title_activity_skate_park__detail_">SkatePark_Detail_Activity</string>
     <string name="title_activity_skate_park__detail__map_">Map</string>
+    <string name="title_activity_main3">Main3Activity</string>
 </resources>
