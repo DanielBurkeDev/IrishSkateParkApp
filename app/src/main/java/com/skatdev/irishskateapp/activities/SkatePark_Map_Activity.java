@@ -33,8 +33,8 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
     private List skateparks_models;
     private int id, ratings;
-    private String name, descr, addr, phone, email, img, comment, website;
-    private double lats, longs;
+    private String name, descr, addr, phone, email, img, comment, website, lats, longs;
+    //private double lats, longs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,7 +128,8 @@ public class SkatePark_Map_Activity extends FragmentActivity implements OnMapRea
 
                     //   skateparks.add(new Skateparks_Model(id, name, descr, addr, phone, email, lats, longs, ratings, img, comment, website));
                     //   Log.d("skatd", "skateparks arraylist:  " + skateparks.toString());
-                    createMarkersList(id, name, descr, addr, phone, email, lats, longs, ratings, img, comment, website);
+
+                   // createMarkersList(id, name, descr, addr, phone, email, lats, longs, ratings, img, comment, website);
                 }
 
 

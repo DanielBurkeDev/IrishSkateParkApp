@@ -1,6 +1,7 @@
 package com.skatdev.irishskateapp.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -25,6 +27,7 @@ import com.skatdev.irishskateapp.models.JSONParksResponse;
 import com.skatdev.irishskateapp.models.Skateparks_Model;
 import com.skatdev.irishskateapp.rest_rv.RequestInterface;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -35,6 +38,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.R.attr.label;
+
 public class Main2Activity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private DBHandler db;
 
@@ -43,12 +48,13 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
     private ArrayList<Skateparks_Model> parks;
     private DataAdapter adapter;
     private Toolbar toolbar;
-    private Button btn_moreinfo;
+    private TextView tv_moreinfo;
 
     private String name, description, address, phone, email, str_latitude, str_longitude,
-            str_ratings, image, comment, website, location;
+            str_ratings, image, comment, website, location, lights, helmets;
     private double dbl_latitude, dbl_longitude;
     private int int_ratings;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +74,6 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-
-        btn_moreinfo = (Button) findViewById(R.id.more_info);
-//        btn_moreinfo.setOnClickListener(new ButtonListener());
 
         loadJSON();
 
@@ -97,7 +100,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                 Log.d("Test data ", "" + data.toString());
                 Log.d("Test data ", "" + String.valueOf(data));
 
-                adapter = new DataAdapter(data, this);
+                adapter = new DataAdapter(data, Main2Activity.this);
                 recyclerView.setAdapter(adapter);
 
 
@@ -132,11 +135,11 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                 System.out.println(phone);
                 email = data.get(x).getmIsa_email();
                 System.out.println(email);
-                dbl_latitude = data.get(x).getmIsa_latitude();
-                str_latitude = String.valueOf(dbl_latitude);
+//                dbl_latitude = data.get(x).getmIsa_latitude();
+//                str_latitude = String.valueOf(dbl_latitude);
                 System.out.println(str_latitude);
-                dbl_longitude = data.get(x).getmIsa_longitude();
-                str_longitude = String.valueOf(dbl_longitude);
+//                dbl_longitude = data.get(x).getmIsa_longitude();
+//                str_longitude = String.valueOf(dbl_longitude);
                 System.out.println(str_longitude);
                 int_ratings = data.get(x).getmIsa_rating();
                 str_ratings = String.valueOf(int_ratings);
@@ -149,14 +152,14 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
                 System.out.println(website);
                 location = data.get(x).getmIsa_location();
                 System.out.println(location);
+                lights = data.get(x).getmIsa_location();
+                System.out.println(lights);
+                helmets = data.get(x).getmIsa_location();
+                System.out.println(helmets);
 
                 db.addParks(name, description, address, phone, email, str_latitude, str_longitude,
-                        str_ratings, image, comment, website, location);
+                        str_ratings, image, comment, website, location, lights, helmets);
             }
-
-
-
-
 
     }
 
@@ -168,6 +171,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
 
         MenuItem searchItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setQueryHint("Search By County");
         searchView.setOnQueryTextListener(this);
         return true;
     }
@@ -223,4 +227,7 @@ public class Main2Activity extends AppCompatActivity implements SearchView.OnQue
         }
         return filteredModelList;
     }
+
+
+
 }

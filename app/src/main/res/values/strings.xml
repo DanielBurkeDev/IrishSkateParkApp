@@ -39,4 +39,22 @@
     <string name="title_activity_skate_park__detail_">SkatePark_Detail_Activity</string>
     <string name="title_activity_skate_park__detail__map_">Map</string>
     <string name="title_activity_main3">Main3Activity</string>
+
+    <string name="txt_moreinfo">More Info</string>
+
+    <string name="title_address">Address</string>
+    <string name="title_phone">Phone</string>
+    <string name="title_location">Location</string>
+    <string name="title_website">Website</string>
+    <string name="title_email">Email</string>
+    <string name="title_lights">Lights</string>
+    <string name="title_helmets">Helmets</string>
+    <string name="title_indoor_outdoor">Indoor/Outdoor</string>
+    <string name="title_surface">Surface</string>
+    <string name="title_opening_hours">Opening Hours</string>
+    <string name="title_cost">Cost</string>
+
+    <string name="button_showonmap">Show Map</string>
+    <string name="title_activity_single_park__maps">Map</string>
+
 </resources>

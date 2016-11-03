@@ -16,7 +16,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:cropToPadding="false"
-            android:scaleType="matrix"
+
             android:src="@drawable/spot1" />
 
         <TextView
@@ -39,30 +39,25 @@
             android:orientation="vertical"
             android:padding="@dimen/padding">
 
-            <LinearLayout
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:alignmentMode="alignBounds"
+                android:columnCount="3"
+                android:columnOrderPreserved="false"
+                android:orientation="vertical"
+                android:useDefaultMargins="true">
 
                 <TextView
                     android:id="@+id/header_lights"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="2"
+                    android:layout_row="0"
+
                     android:text="@string/title_lights"
-                    android:textColor="@color/PrimaryText"
-                    android:textSize="@dimen/sub_header"
-                   />
-                <TextView
-                    android:id="@+id/header_helmets"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="2"
-                    android:text="@string/title_helmets"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
 
@@ -70,40 +65,55 @@
                     android:id="@+id/park_detail_lights"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="1"
+
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
 
+                <Space
+                    android:layout_column="1"
+                    android:layout_columnSpan="1"
+                    android:layout_gravity="fill"
+                    android:layout_row="0" />
 
+                <TextView
+                    android:id="@+id/header_helmets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="0"
+
+                    android:text="@string/title_helmets"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="@dimen/sub_header" />
 
                 <TextView
                     android:id="@+id/park_detail_helmets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="1"
+
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/header_indoor_outdoor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="2"
                     android:text="@string/title_indoor_outdoor"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
@@ -112,9 +122,10 @@
                     android:id="@+id/park_indoor_outdoor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="3"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
@@ -123,9 +134,10 @@
                     android:id="@+id/header_surface"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="2"
                     android:text="@string/title_surface"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
@@ -134,27 +146,22 @@
                     android:id="@+id/park_detail_surface"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="3"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/header_opening_hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="4"
                     android:text="@string/title_opening_hours"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
@@ -163,20 +170,25 @@
                     android:id="@+id/park_opening_hours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="5"
+                    android:maxLines="100"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
-                    android:textSize="@dimen/body_text" />
+                    android:textSize="@dimen/body_text"
+
+                    />
 
                 <TextView
                     android:id="@+id/header_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="4"
                     android:text="@string/title_cost"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
@@ -185,41 +197,42 @@
                     android:id="@+id/park_detail_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_weight="1"
+                    android:layout_row="5"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
 
-            </LinearLayout>
-
-            <View
-                android:id="@+id/div1"
-                style="@style/Divider" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                <View
+                    android:id="@+id/div1"
+                    style="@style/Divider"
+                    android:layout_column="0"
+                    android:layout_columnSpan="3"
+                    android:layout_row="6" />
 
                 <TextView
                     android:id="@+id/header_address"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_row="7"
                     android:text="@string/title_address"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
 
-
                 <TextView
                     android:id="@+id/park_detail_address"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="0"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_row="8"
+                    android:maxLines="100"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text" />
@@ -228,8 +241,10 @@
                     android:id="@+id/header_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_row="7"
                     android:text="@string/title_phone"
                     android:textColor="@color/PrimaryText"
                     android:textSize="@dimen/sub_header" />
@@ -238,41 +253,105 @@
                     android:id="@+id/park_detail_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_column="2"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_row="8"
+                    android:autoLink="phone"
+                    android:text="New Text"
+                    android:textColor="@color/SecondaryText"
+                    android:textSize="@dimen/body_text" />
+
+                <TextView
+                    android:id="@+id/header_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="9"
+                    android:text="@string/title_email"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="@dimen/sub_header" />
+
+                <TextView
+                    android:id="@+id/park_detail_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="10"
                     android:text="New Text"
                     android:textColor="@color/SecondaryText"
                     android:textSize="@dimen/body_text"
-                    android:autoLink="phone"/>
-            </LinearLayout>
+                    android:autoLink="email"/>
 
-            <View
-                android:id="@+id/div3"
-                style="@style/Divider" />
+                <TextView
+                    android:id="@+id/header_website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="9"
+                    android:text="@string/title_website"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="@dimen/sub_header" />
 
-            <TextView
-                android:id="@+id/header_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/div3"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/title_location"
-                android:textColor="@color/PrimaryText"
-                android:textSize="@dimen/sub_header" />
+                <TextView
+                    android:id="@+id/park_detail_website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="10"
+                    android:text="New Text"
+                    android:textColor="@color/SecondaryText"
+                    android:textSize="@dimen/body_text"
+                    android:autoLink="web"/>
 
-            <TextView
-                android:id="@+id/park_detail_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/header_location"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:text="New Text"
-                android:textColor="@color/SecondaryText"
-                android:textSize="@dimen/body_text" />
+                <View
+                    android:id="@+id/div2"
+                    style="@style/Divider"
+                    android:layout_column="0"
+                    android:layout_columnSpan="3"
+                    android:layout_row="11" />
+
+
+                <TextView
+                    android:id="@+id/header_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="12"
+                    android:text="@string/title_location"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="@dimen/sub_header" />
+
+                <TextView
+                    android:id="@+id/park_detail_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_row="13"
+                    android:text="New Text"
+                    android:textColor="@color/SecondaryText"
+                    android:textSize="@dimen/body_text" />
+                <Button
+                    android:id="@+id/park_detail_openmap"
+                    android:layout_column="2"
+                    android:layout_row="13"
+                    android:text="@string/button_showonmap"
+                    android:textColor="@color/AccentColor"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </GridLayout>
+
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

@@ -42,6 +42,8 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_COMMENT = "comment";
     private static final String KEY_WEBSITE = "website";
     private static final String KEY_LOCATION = "location";
+    private static final String KEY_LIGHTS = "lights";
+    private static final String KEY_HELMETS = "helmets";
 
 
     public DBHandler(Context context) {
@@ -78,7 +80,7 @@ public class DBHandler extends SQLiteOpenHelper {
      * Storing park details in database
      * */
     public void addParks(String name, String description, String address, String phone, String email, String latitude,
-                         String longitude, String ratings, String image, String comment, String website, String location) {
+                         String longitude, String ratings, String image, String comment, String website, String location, String lights, String helmets) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 

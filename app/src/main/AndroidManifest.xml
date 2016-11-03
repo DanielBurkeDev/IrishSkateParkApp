@@ -75,7 +75,7 @@
         <activity
             android:name=".activities.Main3Activity"
             android:label="@string/title_activity_main3"
-            android:theme="@style/isaTheme"></activity>
+            android:theme="@style/isaTheme" />
     </application>
 
 </manifest>
