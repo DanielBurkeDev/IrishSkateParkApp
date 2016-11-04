@@ -69,14 +69,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         label = parks.get(i).getmIsa_name();
 
-                viewHolder.btn_list_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-            }
-        });
+//                viewHolder.btn_list_map.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//
+//            }
+//        });
 
 
         // This is how we use Picasso to load images from the internet.
@@ -120,7 +120,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             tv_name = (TextView)view.findViewById(R.id.list_title);
             tv_descr = (TextView)view.findViewById(R.id.list_desc);
             tv_location = (TextView)view.findViewById(R.id.list_location);
-            btn_list_map = (Button) view.findViewById(R.id.list_openmap);
+            //btn_list_map = (Button) view.findViewById(R.id.list_openmap);
 
             container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
